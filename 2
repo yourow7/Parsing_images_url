@@ -1,1 +1,19 @@
+import random
+import urllib.request
+from pathlib import Path
 
+names= []
+directory = Path(r"C:\Users\youro\PycharmProjects\PythonProject1\trashtwo\myimage")
+directory.mkdir(parents=True,exist_ok=True)
+def get_image(url):
+    while True:
+        file_name = f"{random.randrange(1,10000)}.jpg"
+        full_path = directory / file_name
+        if not(full_path.exists()):
+            break
+    donlowd_file = urllib.request.urlopen(url)
+    names.append(str(full_path))
+    return str(full_path)
+file_path = get_image("https://ru.from-locals.com/wp-content/uploads/2021/12/2_29_JaInfo.jpg")
+print("Скачано в:", file_path)
+print("Список файлов:", names)
