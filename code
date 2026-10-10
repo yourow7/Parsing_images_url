@@ -1,3 +1,4 @@
+
 import random
 import urllib.request
 from pathlib import Path
@@ -17,6 +18,7 @@ def get_image(url):
     return str(full_path)
 try:
     file_path = get_image("https://ru.from-locals.com/wp-content/uploads/2021/12/2_29_JaInfo.jpg")
+    #file_path = get_image("22")
     print("Скачано в:", file_path)
     print("Список файлов:", names)
 except (URLError, HTTPError) as e:
